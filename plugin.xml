@@ -1,0 +1,47 @@
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="org.stc.FirstLaunchPlugin"
+    version="0.4.1">
+
+    <name>First Launch Plugin</name>
+
+    <engines>
+        <engine name="cordova" version=">=2.7.0" />
+    </engines>
+
+    <js-module src="www/FirstLaunchPlugin.js" name="FirstLaunchPlugin">
+        <clobbers target="FirstLaunchPlugin" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="FirstLaunchPlugin">
+                <param name="ios-package" value="FirstLaunchPlugin"/>
+            </feature>
+            
+            <plugin name="FirstLaunchPlugin" value="FirstLaunchPlugin" />
+        </config-file>
+
+        <header-file src="src/ios/FirstLaunchPlugin.h" />
+        <source-file src="src/ios/FirstLaunchPlugin.m" />
+    </platform>
+
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            
+            <feature name="applicationPreferences" >
+                <param name="android-package" value="org.stc.applicationPreferences.applicationPreferences"/>
+            </feature>
+            
+            <plugin name="applicationPreferences" value="org.stc.applicationPreferences.applicationPreferences" />
+        </config-file>
+        
+        <source-file src="src/android/applicationPreferences.java" 
+            target-dir="src/org/stc/applicationPreferences" />
+
+    </platform>
+
+</plugin>

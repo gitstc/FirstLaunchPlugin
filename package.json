@@ -1,0 +1,17 @@
+{
+  "name": "org-stc-firstlaunchplugin",
+  "version": "0.0.1",
+  "description": "First Launch Plugin",
+  "repository": {
+    
+  },
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova"
+  ],
+  "platforms": [
+    "ios",
+    "android"
+  ],
+  "author": "TSU"
+}
